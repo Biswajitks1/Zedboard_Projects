@@ -1,0 +1,96 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
+| Date         : Sun Sep 24 22:42:10 2023
+| Host         : LAPTOP-LQMFOCT1 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    71 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    18 |
+| >= 0 to < 4        |     6 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            5 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              28 |            9 |
+| Yes          | No                    | No                     |              19 |            6 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              64 |           26 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------+------------------------------------------------+------------------------------------+------------------+----------------+--------------+
+|          Clock Signal          |                  Enable Signal                 |          Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------+------------------------------------------------+------------------------------------+------------------+----------------+--------------+
+| ~nolabel_line83/SC/clk_control | nolabel_line83/SC/FSM_onehot_state_reg_n_0_[1] | reset_IBUF                         |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/SC/state_reg[3]                 | reset_IBUF                         |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/oled_vbat_i_1_n_0               | reset_IBUF                         |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/oled_vdd_i_1_n_0                | reset_IBUF                         |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/oled_dcn_i_1_n_0                | reset_IBUF                         |                1 |              1 |         1.00 |
+| ~nolabel_line83/SC/clk_control |                                                |                                    |                2 |              2 |         1.00 |
+|  clock_IBUF_BUFG               |                                                | reset_IBUF                         |                2 |              4 |         2.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/SC/reset[0]                     |                                    |                2 |              4 |         2.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/SC/state_reg[4][0]              | reset_IBUF                         |                1 |              5 |         5.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/SC/done_send_reg_0[0]           | reset_IBUF                         |                2 |              5 |         2.50 |
+| ~nolabel_line83/SC/clk_control |                                                | reset_IBUF                         |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG               | nolabel_line83/E[0]                            |                                    |                1 |              7 |         7.00 |
+| ~nolabel_line83/SC/clk_control | nolabel_line83/SC/shiftReg[7]_i_1_n_0          |                                    |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG               |                                                |                                    |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG               | nolabel_line83/SC/E[0]                         | reset_IBUF                         |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG               | nolabel_line83/g0_b0_n_0                       | reset_IBUF                         |                7 |              9 |         1.29 |
+|  clock_IBUF_BUFG               |                                                | nolabel_line83/DG/count[0]_i_1_n_0 |                5 |             18 |         3.60 |
+|  clock_IBUF_BUFG               | nolabel_line83/FSM_sequential_state_reg[1]     | reset_IBUF                         |                8 |             32 |         4.00 |
++--------------------------------+------------------------------------------------+------------------------------------+------------------+----------------+--------------+
+
+
